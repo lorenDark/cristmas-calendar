@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+    background-color: #ff0000;
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+    background-image: url(https://files.nsctotal.com.br/s3fs-public/styles/paragraph_image_style/public/graphql-upload-files/arvore%20de%20natal_9.jpg?0TTu_xxDORvIK0D5b.1C.Le7lVp_kuhe&itok=k_wZglyT);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin: auto;
+}
+
+.days {
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+
+.days div {
+    width: 100%;
+    color: white;
+    font-style: italic;
+    line-height: normal;
+    font-size: 200%;
+    border-right: 1px solid white;
+    cursor: default;
+}
+
+section div {
+    width: 100%;
+    color: white;
+    font-style: italic;
+    line-height: normal;
+    font-size: 3rem;
+    padding: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+section div::selection {
+    color: green
+}
