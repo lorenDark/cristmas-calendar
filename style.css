@@ -49,6 +49,17 @@ section div {
     cursor: pointer;
 }
 
-section div::selection {
+section div:hover {
     color: green
+}
+
+#frase-do-dia {
+    font-size: 24px;
+}
+
+@media screen and (max-width: 990px) {
+    .container {
+        border: 2px solid white;
+        background-color: rgba(255, 0, 0, 0.4);
+    }
 }

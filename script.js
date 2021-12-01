@@ -43,7 +43,7 @@ function chamaTexto(element) {
     // DEPOIS DIMINUI 1 PARA SER COMPATIVEL COM AS POSIÇÕES DA LISTA DE STRINGS 
     const posicaoClicada = parseInt(textElement) - 1
 
-    // 
+    // pega a frase do dia dentro da lista com base na posição clicada
     const todayPhrase = myPhrases[
         posicaoClicada
     ]
@@ -56,16 +56,24 @@ function chamaTexto(element) {
 
     // compara a data de hoje com a data que o cliente clicou, depois exibe o texto para o cliente
     // somamos 1 porque foi diminuido 1 do texto da posição clicada
-    if (dateNumber === posicaoClicada + 1) {
+    const labelJaExiste = document.getElementById("frase-do-dia")
+
+    if (dateNumber === posicaoClicada + 1 && !labelJaExiste) {
         const divChamaTexto = document.getElementById('chama-texto')
         const labelElement = document.createElement("label")
+        labelElement.id = 'frase-do-dia'
         const conteudoDaDiv = document.createTextNode(todayPhrase)
         labelElement.appendChild(conteudoDaDiv)
 
         divChamaTexto.insertAdjacentElement('afterbegin', labelElement)
+    } else if (labelJaExiste) {
+        labelJaExiste.textContent = dateNumber === posicaoClicada + 1 ?
+            todayPhrase :
+            "Ops! Você clicou no dia errado. Por favor, clique na data de hoje."
     } else {
         const divChamaTexto = document.getElementById('chama-texto')
         const labelElement = document.createElement("label")
+        labelElement.id = 'frase-do-dia'
         const conteudoDaDiv = document.createTextNode("Ops! Você clicou no dia errado. Por favor, clique na data de hoje.")
         labelElement.appendChild(conteudoDaDiv)
 
